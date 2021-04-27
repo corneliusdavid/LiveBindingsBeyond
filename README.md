@@ -1,7 +1,7 @@
 # LiveBindings & Beyond
-The more I learn about and use LiveBindings in Delphi, the more I like them! But not very many of them come with Delphi and I often find myself wishing there were more methods available. Then I learned how simple it was to write your own, so I decided to do that and share them with anyone else who finds them useful.
+The more I learn about and use LiveBindings in Delphi, the more I like them! Sometimes I need to use custom formatting and it's nice that there are several methods available but it seems to stop--I often find myself wishing there were more methods available. Then I learned how simple it was to write your own, so I decided to do that and share them with anyone else who finds them useful.
 
-This list of custom methods will grow over time as I find need or get suggestions. I won't list them here but the source files will have XML-style code documentation that explains the purpose and syntax of each one.
+This list of custom methods will grow over time as I find one I need or get suggestions. I won't list them here but the source files will have XML-style code documentation that explains the purpose and syntax of each one.
 
 David Cornelius
 
