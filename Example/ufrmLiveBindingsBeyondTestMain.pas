@@ -31,7 +31,8 @@ type
     LinkPropertyToFieldCaption6: TLinkPropertyToField;
     lblHoursSince: TLabel;
     LinkPropertyToFieldCaption7: TLinkPropertyToField;
-    NavigatorPrototypeBindSrc: TBindNavigator;
+    BindNavigator1: TBindNavigator;
+    Label2: TLabel;
   end;
 
 var

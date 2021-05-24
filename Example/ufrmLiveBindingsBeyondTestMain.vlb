@@ -16,12 +16,14 @@ Visible=False
 
 [lblMonthsSince]
 Coordinates=140,80,90,51
+Visible=True
 
 [lblMinutesSince]
 Coordinates=510,40,92,51
 
 [lblYearsSince]
 Coordinates=140,20,81,51
+Visible=True
 
 [edtEnteredDate]
 Coordinates=220,20,90,33
@@ -36,11 +38,11 @@ Visible=False
 Coordinates=590,130,96,51
 
 []
-Coordinates=0,0,100,51
+Coordinates=0,0,53,51
 Visible=True
 
 [PrototypeBindSrc]
-Coordinates=340,30,101,177
+Coordinates=340,50,101,177
 
 [BindingsList1]
 Coordinates=0,0,82,33
@@ -48,6 +50,10 @@ Coordinates=0,0,82,33
 [lblHoursSince]
 Coordinates=690,80,83,51
 
-[NavigatorPrototypeBindSrc]
-Coordinates=479,200,149,51
+[BindNavigator1]
+Coordinates=310,0,90,51
+Visible=True
+
+[Label2]
+Coordinates=0,0,46,51
 

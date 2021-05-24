@@ -39,56 +39,63 @@ object frmLiveBindingsBeyondTestMain: TfrmLiveBindingsBeyondTestMain
       object lblYearsSince: TLabel
         Left = 56
         Top = 62
-        Width = 195
+        Width = 97
         Height = 16
-        Caption = 'Years since: -0.451976024507567'
+        Caption = 'Years since: -0.4'
       end
       object lblMonthsSince: TLabel
         Left = 56
         Top = 84
-        Width = 197
+        Width = 120
         Height = 16
-        Caption = 'Months since: -13.7570202459491'
+        Caption = 'Months since: -13.36'
       end
       object lblDaysSince: TLabel
         Left = 56
         Top = 106
-        Width = 177
+        Width = 89
         Height = 16
-        Caption = 'Day since: -165.084242951389'
+        Caption = 'Day since: -160'
       end
       object lblMinutesSince: TLabel
         Left = 56
         Top = 150
-        Width = 172
+        Width = 151
         Height = 16
-        Caption = 'Minutes since: -237721.30985'
+        Caption = 'Minutes since: -230914.67'
       end
       object lblSecondsSince: TLabel
         Left = 56
         Top = 172
-        Width = 180
+        Width = 155
         Height = 16
-        Caption = 'Seconds  since: -14263278.591'
+        Caption = 'Seconds  since: -13854600'
       end
       object lblHoursSince: TLabel
         Left = 56
         Top = 128
-        Width = 195
+        Width = 125
         Height = 16
-        Caption = 'Hours sincxe: -3962.02183083333'
+        Caption = 'Hours sincxe: -3848.6'
+      end
+      object Label2: TLabel
+        Left = 359
+        Top = 29
+        Width = 121
+        Height = 16
+        Caption = 'another random date'
+      end
+      object BindNavigator1: TBindNavigator
+        Left = 320
+        Top = 22
+        Width = 33
+        Height = 31
+        DataSource = PrototypeBindSrc
+        VisibleButtons = [nbNext]
+        Orientation = orHorizontal
+        TabOrder = 0
       end
     end
-  end
-  object NavigatorPrototypeBindSrc: TBindNavigator
-    Left = 297
-    Top = 45
-    Width = 40
-    Height = 31
-    DataSource = PrototypeBindSrc
-    VisibleButtons = [nbNext]
-    Orientation = orHorizontal
-    TabOrder = 1
   end
   object PrototypeBindSrc: TPrototypeBindSource
     AutoActivate = True
@@ -114,7 +121,7 @@ object frmLiveBindingsBeyondTestMain: TfrmLiveBindingsBeyondTestMain
       DataSource = PrototypeBindSrc
       FieldName = 'DateTime'
       Component = lblYearsSince
-      CustomFormat = #39'Years since: '#39' + YearsSince(%s)'
+      CustomFormat = #39'Years since: '#39' + YearsSince(%s, -1)'
       ComponentProperty = 'Caption'
     end
     object LinkPropertyToFieldCaption4: TLinkPropertyToField
@@ -122,7 +129,7 @@ object frmLiveBindingsBeyondTestMain: TfrmLiveBindingsBeyondTestMain
       DataSource = PrototypeBindSrc
       FieldName = 'DateTime'
       Component = lblMonthsSince
-      CustomFormat = #39'Months since: '#39' + MonthsSince(%s)'
+      CustomFormat = #39'Months since: '#39' + MonthsSince(%s, -2)'
       ComponentProperty = 'Caption'
     end
     object LinkPropertyToFieldCaption5: TLinkPropertyToField
@@ -130,7 +137,7 @@ object frmLiveBindingsBeyondTestMain: TfrmLiveBindingsBeyondTestMain
       DataSource = PrototypeBindSrc
       FieldName = 'DateTime'
       Component = lblMinutesSince
-      CustomFormat = #39'Minutes since: '#39' + MinutesSince(%s)'
+      CustomFormat = #39'Minutes since: '#39' + MinutesSince(%s, -2)'
       ComponentProperty = 'Caption'
     end
     object LinkPropertyToFieldCaption3: TLinkPropertyToField
@@ -138,7 +145,7 @@ object frmLiveBindingsBeyondTestMain: TfrmLiveBindingsBeyondTestMain
       DataSource = PrototypeBindSrc
       FieldName = 'DateTime'
       Component = lblDaysSince
-      CustomFormat = #39'Day since: '#39' + DaysSince(%s)'
+      CustomFormat = #39'Day since: '#39' + DaysSince(%s, 0)'
       ComponentProperty = 'Caption'
     end
     object LinkPropertyToFieldCaption: TLinkPropertyToField
@@ -146,7 +153,7 @@ object frmLiveBindingsBeyondTestMain: TfrmLiveBindingsBeyondTestMain
       DataSource = PrototypeBindSrc
       FieldName = 'DateTime'
       Component = lblSecondsSince
-      CustomFormat = #39'Seconds  since: '#39' + SecondsSince(%s)'
+      CustomFormat = #39'Seconds  since: '#39' + SecondsSince(%s, 2)'
       ComponentProperty = 'Caption'
     end
     object LinkPropertyToFieldCaption6: TLinkPropertyToField
@@ -162,7 +169,7 @@ object frmLiveBindingsBeyondTestMain: TfrmLiveBindingsBeyondTestMain
       DataSource = PrototypeBindSrc
       FieldName = 'DateTime'
       Component = lblHoursSince
-      CustomFormat = #39'Hours sincxe: '#39' + HoursSince(%s)'
+      CustomFormat = #39'Hours sincxe: '#39' + HoursSince(%s, -1)'
       ComponentProperty = 'Caption'
     end
   end

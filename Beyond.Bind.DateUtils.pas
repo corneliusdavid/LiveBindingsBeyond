@@ -8,7 +8,7 @@ interface
 implementation
 
 uses
-  System.SysUtils,
+  System.SysUtils, System.Math,
   System.Bindings.Methods, System.Bindings.EvalProtocol,
   System.Bindings.Consts, System.TypInfo,
   System.TimeSpan;
@@ -31,20 +31,26 @@ end;
 ///   Used in several local MakeXXX functions to ensure there's only
 ///   one argument and that it's a date
 /// </summary>
-function GetSingleDateArg(Args: TArray<IValue>): TDateTime;
+procedure CheckArgs(Args: TArray<IValue>; var ADateTime: TDateTime; var DecimalDigits: Integer);
 var
-  v1: IValue;
+  v1, v2: IValue;
 begin
-  // Ensure only one argument is received.
-  if Length(Args) <> 1 then
-    raise EEvaluatorError.Create(Format(sUnexpectedArgCount, [1, Length(Args)]));
+  // Ensure two argument is received.
+  if Length(Args) <> 2 then
+    raise EEvaluatorError.Create(Format(sUnexpectedArgCount, [2, Length(Args)]));
 
-  // verify it's a date (float)
+  // verify first one is a date (float)
   v1 := Args[0];
   if not (v1.GetType.Kind in [tkFloat]) then
-    raise EEvaluatorError.Create('Argument must be TDate');
+    raise EEvaluatorError.Create('First argument must be TDateTime')
+  else
+    ADateTime := v1.GetValue.AsExtended;
 
-  Result := v1.GetValue.AsExtended;
+  v2 := Args[1];
+  if not (v2.GetType.Kind in [tkInteger, tkInt64]) then
+    raise EEvaluatorError.Create('Second argument must be Integer')
+  else
+    DecimalDigits := v2.GetValue.AsInteger;
 end;
 
 /// <summary>
@@ -57,11 +63,12 @@ function MakeYearsSinceMethod: IInvokable;
 begin
   Result := MakeInvokable(function(Args: TArray<IValue>): IValue
       var
-        InputDate: TDate;
+        InputDate: TDateTime;
+        RoundDigits: Integer;
         YearsSince: Double;
       begin
-        InputDate := GetSingleDateArg(Args);
-        YearsSince := TTimeSpan.Subtract(Now, InputDate).TotalDays / 365.25;
+        CheckArgs(Args, InputDate, RoundDigits);
+        YearsSince := RoundTo(TTimeSpan.Subtract(Now, InputDate).TotalDays / 365.25, RoundDigits);
 
         Result := TValueWrapper.Create(YearsSince);
       end);
@@ -77,11 +84,12 @@ function MakeMonthsSinceMethod: IInvokable;
 begin
   Result := MakeInvokable(function(Args: TArray<IValue>): IValue
       var
-        InputDate: TDate;
+        InputDate: TDateTime;
+        RoundDigits: Integer;
         MonthsSince: Double;
       begin
-        InputDate := GetSingleDateArg(Args);
-        MonthsSince := TTimeSpan.Subtract(Now, InputDate).TotalDays / 12.0;
+        CheckArgs(Args, InputDate, RoundDigits);
+        MonthsSince := RoundTo(TTimeSpan.Subtract(Now, InputDate).TotalDays / 12.0, RoundDigits);
 
         Result := TValueWrapper.Create(MonthsSince);
       end);
@@ -97,11 +105,12 @@ function MakeDaysSinceMethod: IInvokable;
 begin
   Result := MakeInvokable(function(Args: TArray<IValue>): IValue
       var
-        InputDate: TDate;
+        InputDate: TDateTime;
+        RoundDigits: Integer;
         DaysSince: Double;
       begin
-        InputDate := GetSingleDateArg(Args);
-        DaysSince := TTimeSpan.Subtract(Now, InputDate).TotalDays;
+        CheckArgs(Args, InputDate, RoundDigits);
+        DaysSince := RoundTo(TTimeSpan.Subtract(Now, InputDate).TotalDays, RoundDigits);
 
         Result := TValueWrapper.Create(DaysSince);
       end);
@@ -117,11 +126,12 @@ function MakeMinutesSinceMethod: IInvokable;
 begin
   Result := MakeInvokable(function(Args: TArray<IValue>): IValue
       var
-        InputDate: TDate;
+        InputDate: TDateTime;
+        RoundDigits: Integer;
         MinutesSince: Double;
       begin
-        InputDate := GetSingleDateArg(Args);
-        MinutesSince := TTimeSpan.Subtract(Now, InputDate).TotalMinutes;
+        CheckArgs(Args, InputDate, RoundDigits);
+        MinutesSince := RoundTo(TTimeSpan.Subtract(Now, InputDate).TotalMinutes, RoundDigits);
 
         Result := TValueWrapper.Create(MinutesSince);
       end);
@@ -137,11 +147,12 @@ function MakeHoursSinceMethod: IInvokable;
 begin
   Result := MakeInvokable(function(Args: TArray<IValue>): IValue
       var
-        InputDate: TDate;
+        InputDate: TDateTime;
+        RoundDigits: Integer;
         HoursSince: Double;
       begin
-        InputDate := GetSingleDateArg(Args);
-        HoursSince := TTimeSpan.Subtract(Now, InputDate).TotalHours;
+        CheckArgs(Args, InputDate, RoundDigits);
+        HoursSince := RoundTo(TTimeSpan.Subtract(Now, InputDate).TotalHours, RoundDigits);
 
         Result := TValueWrapper.Create(HoursSince);
       end);
@@ -157,11 +168,12 @@ function MakeSecondsSinceMethod: IInvokable;
 begin
   Result := MakeInvokable(function(Args: TArray<IValue>): IValue
       var
-        InputDate: TDate;
+        InputDate: TDateTime;
+        RoundDigits: Integer;
         SecondsSince: Double;
       begin
-        InputDate := GetSingleDateArg(Args);
-        SecondsSince := TTimeSpan.Subtract(Now, InputDate).TotalSeconds;
+        CheckArgs(Args, InputDate, RoundDigits);
+        SecondsSince := RoundTo(TTimeSpan.Subtract(Now, InputDate).TotalSeconds, RoundDigits);
 
         Result := TValueWrapper.Create(SecondsSince);
       end);
