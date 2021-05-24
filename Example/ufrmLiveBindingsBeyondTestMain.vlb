@@ -1,9 +1,11 @@
 ﻿[Label1]
-Coordinates=249,2,46,33
-Visible=False
+Coordinates=20,180,46,51
+Visible=True
+LayerNames=DateTime
 
 [lblDaysSince]
-Coordinates=140,140,78,51
+Coordinates=80,140,78,51
+LayerNames=DateTime
 
 [pgLBCategories]
 Coordinates=212,132,93,33
@@ -15,15 +17,18 @@ ExplicitSubNodes=Date;Time
 Visible=False
 
 [lblMonthsSince]
-Coordinates=140,80,90,51
+Coordinates=80,80,90,51
 Visible=True
+LayerNames=DateTime
 
 [lblMinutesSince]
-Coordinates=510,40,92,51
+Coordinates=450,40,92,51
+LayerNames=DateTime
 
 [lblYearsSince]
-Coordinates=140,20,81,51
+Coordinates=80,20,81,51
 Visible=True
+LayerNames=DateTime
 
 [edtEnteredDate]
 Coordinates=220,20,90,33
@@ -35,25 +40,70 @@ Coordinates=268,71,76,33
 Visible=False
 
 [lblSecondsSince]
-Coordinates=590,130,96,51
+Coordinates=470,130,96,51
+LayerNames=DateTime
 
 []
 Coordinates=0,0,53,51
 Visible=True
 
-[PrototypeBindSrc]
-Coordinates=340,50,101,177
-
 [BindingsList1]
 Coordinates=0,0,82,33
 
 [lblHoursSince]
-Coordinates=690,80,83,51
-
-[BindNavigator1]
-Coordinates=310,0,90,51
-Visible=True
+Coordinates=440,220,83,51
+LayerNames=DateTime
 
 [Label2]
-Coordinates=0,0,46,51
+Coordinates=0,0,46,33
+Visible=False
+
+[PrototypeBindSrcDates]
+Coordinates=280,50,129,195
+LayerNames=DateTime
+
+[shtStrUtils]
+Coordinates=71,70,66,33
+Visible=False
+
+[Label3]
+Coordinates=110,210,46,51
+LayerNames=DateTime
+
+[BindNavigator1]
+Coordinates=260,-10,90,51
+LayerNames=DateTime
+
+[Module Settings]
+ModelLayerNames=DateTime;String
+ActiveLayerNames=String
+EditingLayerName=String
+
+[shtJSON]
+Coordinates=0,0,57,33
+Visible=False
+
+[edtLengthTest]
+Coordinates=620,40,85,69
+ExplicitSubNodes=
+LayerNames=String
+
+[Label4]
+Coordinates=620,120,46,51
+LayerNames=String
+
+[Label5]
+Coordinates=760,120,79,69
+Visible=True
+ExplicitSubNodes=ShowAccelChar
+LayerNames=String
+
+[CheckBox1]
+Coordinates=750,200,95,69
+LayerNames=String
+
+[Label6]
+Coordinates=620,200,79,69
+ExplicitSubNodes=ShowAccelChar
+LayerNames=String
 

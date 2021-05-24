@@ -21,7 +21,7 @@ type
     lblDaysSince: TLabel;
     lblMinutesSince: TLabel;
     lblSecondsSince: TLabel;
-    PrototypeBindSrc: TPrototypeBindSource;
+    PrototypeBindSrcDates: TPrototypeBindSource;
     BindingsList1: TBindingsList;
     LinkPropertyToFieldCaption2: TLinkPropertyToField;
     LinkPropertyToFieldCaption4: TLinkPropertyToField;
@@ -33,6 +33,19 @@ type
     LinkPropertyToFieldCaption7: TLinkPropertyToField;
     BindNavigator1: TBindNavigator;
     Label2: TLabel;
+    shtStrUtils: TRzTabSheet;
+    Label3: TLabel;
+    LinkPropertyToFieldCaption8: TLinkPropertyToField;
+    shtJSON: TRzTabSheet;
+    edtLengthTest: TLabeledEdit;
+    Label4: TLabel;
+    LinkControlToPropertyCaption: TLinkControlToProperty;
+    Label5: TLabel;
+    CheckBox1: TCheckBox;
+    LinkControlToPropertyShowAccelChar: TLinkControlToProperty;
+    Label6: TLabel;
+    LinkControlToPropertyCaption2: TLinkControlToProperty;
+    LinkControlToPropertyShowAccelChar2: TLinkControlToProperty;
   end;
 
 var

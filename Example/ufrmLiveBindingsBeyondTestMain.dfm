@@ -19,16 +19,14 @@ object frmLiveBindingsBeyondTestMain: TfrmLiveBindingsBeyondTestMain
     Width = 612
     Height = 340
     Hint = ''
-    ActivePage = shtDateTime
+    ActivePage = shtStrUtils
     ActivePageDefault = shtDateTime
     Align = alClient
-    TabIndex = 0
+    TabIndex = 1
     TabOrder = 0
     FixedDimension = 22
     object shtDateTime: TRzTabSheet
       Caption = 'Date/Time'
-      ExplicitLeft = 2
-      ExplicitTop = 24
       object Label1: TLabel
         Left = 40
         Top = 29
@@ -62,21 +60,21 @@ object frmLiveBindingsBeyondTestMain: TfrmLiveBindingsBeyondTestMain
         Top = 150
         Width = 151
         Height = 16
-        Caption = 'Minutes since: -230914.67'
+        Caption = 'Minutes since: -230904.07'
       end
       object lblSecondsSince: TLabel
         Left = 56
         Top = 172
         Width = 155
         Height = 16
-        Caption = 'Seconds  since: -13854600'
+        Caption = 'Seconds  since: -13854200'
       end
       object lblHoursSince: TLabel
         Left = 56
         Top = 128
         Width = 125
         Height = 16
-        Caption = 'Hours sincxe: -3848.6'
+        Caption = 'Hours sincxe: -3848.4'
       end
       object Label2: TLabel
         Left = 359
@@ -85,19 +83,86 @@ object frmLiveBindingsBeyondTestMain: TfrmLiveBindingsBeyondTestMain
         Height = 16
         Caption = 'another random date'
       end
+      object Label3: TLabel
+        Left = 40
+        Top = 205
+        Width = 214
+        Height = 16
+        Caption = 'Current time: May 24, 2021 16:39:53'
+      end
       object BindNavigator1: TBindNavigator
         Left = 320
         Top = 22
         Width = 33
         Height = 31
-        DataSource = PrototypeBindSrc
+        DataSource = PrototypeBindSrcDates
         VisibleButtons = [nbNext]
         Orientation = orHorizontal
         TabOrder = 0
       end
     end
+    object shtStrUtils: TRzTabSheet
+      Caption = 'String'
+      ExplicitLeft = 0
+      ExplicitTop = 24
+      DesignSize = (
+        608
+        314)
+      object Label4: TLabel
+        Left = 48
+        Top = 86
+        Width = 4
+        Height = 16
+      end
+      object Label5: TLabel
+        Left = 48
+        Top = 128
+        Width = 473
+        Height = 16
+        Anchors = [akLeft, akTop, akRight]
+        AutoSize = False
+        Caption = '&Hot key labels--add one in the textbox above'
+      end
+      object Label6: TLabel
+        Left = 48
+        Top = 173
+        Width = 473
+        Height = 16
+        Anchors = [akLeft, akTop, akRight]
+        AutoSize = False
+      end
+      object edtLengthTest: TLabeledEdit
+        Left = 48
+        Top = 56
+        Width = 473
+        Height = 24
+        Anchors = [akLeft, akTop, akRight]
+        EditLabel.Width = 173
+        EditLabel.Height = 16
+        EditLabel.Caption = 'Type something, then hit Tab:'
+        TabOrder = 0
+        Text = 'Label4'
+      end
+      object CheckBox1: TCheckBox
+        Left = 48
+        Top = 150
+        Width = 193
+        Height = 17
+        Caption = 'Show "accelerator" character'
+        Checked = True
+        State = cbChecked
+        TabOrder = 1
+      end
+    end
+    object shtJSON: TRzTabSheet
+      Caption = 'JSON'
+      ExplicitLeft = 0
+      ExplicitTop = 0
+      ExplicitWidth = 0
+      ExplicitHeight = 0
+    end
   end
-  object PrototypeBindSrc: TPrototypeBindSource
+  object PrototypeBindSrcDates: TPrototypeBindSource
     AutoActivate = True
     AutoPost = False
     FieldDefs = <
@@ -118,7 +183,7 @@ object frmLiveBindingsBeyondTestMain: TfrmLiveBindingsBeyondTestMain
     Top = 261
     object LinkPropertyToFieldCaption2: TLinkPropertyToField
       Category = 'Quick Bindings'
-      DataSource = PrototypeBindSrc
+      DataSource = PrototypeBindSrcDates
       FieldName = 'DateTime'
       Component = lblYearsSince
       CustomFormat = #39'Years since: '#39' + YearsSince(%s, -1)'
@@ -126,7 +191,7 @@ object frmLiveBindingsBeyondTestMain: TfrmLiveBindingsBeyondTestMain
     end
     object LinkPropertyToFieldCaption4: TLinkPropertyToField
       Category = 'Quick Bindings'
-      DataSource = PrototypeBindSrc
+      DataSource = PrototypeBindSrcDates
       FieldName = 'DateTime'
       Component = lblMonthsSince
       CustomFormat = #39'Months since: '#39' + MonthsSince(%s, -2)'
@@ -134,7 +199,7 @@ object frmLiveBindingsBeyondTestMain: TfrmLiveBindingsBeyondTestMain
     end
     object LinkPropertyToFieldCaption5: TLinkPropertyToField
       Category = 'Quick Bindings'
-      DataSource = PrototypeBindSrc
+      DataSource = PrototypeBindSrcDates
       FieldName = 'DateTime'
       Component = lblMinutesSince
       CustomFormat = #39'Minutes since: '#39' + MinutesSince(%s, -2)'
@@ -142,7 +207,7 @@ object frmLiveBindingsBeyondTestMain: TfrmLiveBindingsBeyondTestMain
     end
     object LinkPropertyToFieldCaption3: TLinkPropertyToField
       Category = 'Quick Bindings'
-      DataSource = PrototypeBindSrc
+      DataSource = PrototypeBindSrcDates
       FieldName = 'DateTime'
       Component = lblDaysSince
       CustomFormat = #39'Day since: '#39' + DaysSince(%s, 0)'
@@ -150,7 +215,7 @@ object frmLiveBindingsBeyondTestMain: TfrmLiveBindingsBeyondTestMain
     end
     object LinkPropertyToFieldCaption: TLinkPropertyToField
       Category = 'Quick Bindings'
-      DataSource = PrototypeBindSrc
+      DataSource = PrototypeBindSrcDates
       FieldName = 'DateTime'
       Component = lblSecondsSince
       CustomFormat = #39'Seconds  since: '#39' + SecondsSince(%s, 2)'
@@ -158,7 +223,7 @@ object frmLiveBindingsBeyondTestMain: TfrmLiveBindingsBeyondTestMain
     end
     object LinkPropertyToFieldCaption6: TLinkPropertyToField
       Category = 'Quick Bindings'
-      DataSource = PrototypeBindSrc
+      DataSource = PrototypeBindSrcDates
       FieldName = 'DateTime'
       Component = Label1
       CustomFormat = #39'Random Time: '#39' + FormatDateTime('#39'mmm dd, yyyy hh:nn:ss'#39', %s)'
@@ -166,11 +231,53 @@ object frmLiveBindingsBeyondTestMain: TfrmLiveBindingsBeyondTestMain
     end
     object LinkPropertyToFieldCaption7: TLinkPropertyToField
       Category = 'Quick Bindings'
-      DataSource = PrototypeBindSrc
+      DataSource = PrototypeBindSrcDates
       FieldName = 'DateTime'
       Component = lblHoursSince
       CustomFormat = #39'Hours sincxe: '#39' + HoursSince(%s, -1)'
       ComponentProperty = 'Caption'
+    end
+    object LinkPropertyToFieldCaption8: TLinkPropertyToField
+      Category = 'Quick Bindings'
+      DataSource = PrototypeBindSrcDates
+      FieldName = 'DateTime'
+      Component = Label3
+      CustomFormat = 
+        #39'Current time: '#39' + FormatDateTime('#39'mmm dd, yyyy hh:nn:ss'#39', Now()' +
+        ')'
+      ComponentProperty = 'Caption'
+    end
+    object LinkControlToPropertyCaption: TLinkControlToProperty
+      Category = 'Quick Bindings'
+      Control = edtLengthTest
+      Track = True
+      Component = Label4
+      ComponentProperty = 'Caption'
+      CustomFormat = #39'Length: '#39' + StrLen(%s)'
+    end
+    object LinkControlToPropertyShowAccelChar: TLinkControlToProperty
+      Category = 'Quick Bindings'
+      Control = CheckBox1
+      Track = True
+      Component = Label5
+      ComponentProperty = 'ShowAccelChar'
+    end
+    object LinkControlToPropertyCaption2: TLinkControlToProperty
+      Category = 'Quick Bindings'
+      Control = edtLengthTest
+      Track = True
+      Component = Label6
+      ComponentProperty = 'Caption'
+      CustomFormat = 'DoubleAmp(%s)'
+      InitializeControlValue = False
+    end
+    object LinkControlToPropertyShowAccelChar2: TLinkControlToProperty
+      Category = 'Quick Bindings'
+      Control = CheckBox1
+      Track = True
+      Component = Label6
+      ComponentProperty = 'ShowAccelChar'
+      InitializeControlValue = False
     end
   end
 end
