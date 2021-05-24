@@ -21,7 +21,7 @@ uses
 /// <returns>
 ///   string
 /// </returns>
-function MakeParseJsonValueMethod: IInvokable;
+function MakeJsonValueMethod: IInvokable;
 begin
   Result := MakeInvokable(function(Args: TArray<IValue>): IValue
       var
@@ -39,7 +39,7 @@ begin
         v2 := Args[1];
         if (not (v1.GetType.Kind in [tkString, tkUString, tkWString])) or
            (not (v2.GetType.Kind in [tkString, tkUString, tkWString])) then
-          raise EEvaluatorError.Create('Both arguments to ParseJsonValue must be String');
+          raise EEvaluatorError.Create('Both arguments to JsonValue must be String');
 
         JsonStr := v1.GetValue.AsString;
         NameStr := v2.GetValue.AsString;
@@ -49,7 +49,7 @@ begin
           Result := TValueWrapper.Create(JsonObj.GetValue<string>(NameStr));
         except
           on e:Exception do
-            raise EEvaluatorError.Create('Invalid JSON format in ParseJsonValue');
+            raise EEvaluatorError.Create('Invalid JSON format in JsonValue');
         end;
       end);
 end;
@@ -118,14 +118,14 @@ end;
 
 const
   sUnitName = 'Beyond.Bind.Json';
-  sParseJsonValueName = 'ParseJsonValue';
+  sJsonValueName = 'JsonValue';
   sJsonArrayToCSVName = 'JsonArrayToCSV';
 
 procedure RegisterMethods;
 begin
   TBindingMethodsFactory.RegisterMethod(
-      TMethodDescription.Create(MakeParseJsonValueMethod,
-         sParseJsonValueName, sParseJsonValueName, sUnitName, True,
+      TMethodDescription.Create(MakeJsonValueMethod,
+         sJsonValueName, sJsonValueName, sUnitName, True,
          'Get a JSON Value from the given Name', nil));
   TBindingMethodsFactory.RegisterMethod(
       TMethodDescription.Create(MakeJsonArrayToCSVMethod,
@@ -135,7 +135,7 @@ end;
 
 procedure UnregisterMethods;
 begin
-  TBindingMethodsFactory.UnRegisterMethod(sParseJsonValueName);
+  TBindingMethodsFactory.UnRegisterMethod(sJsonValueName);
   TBindingMethodsFactory.UnRegisterMethod(sJsonArrayToCSVName);
 end;
 
