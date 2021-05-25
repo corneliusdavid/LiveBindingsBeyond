@@ -19,10 +19,10 @@ object frmLiveBindingsBeyondTestMain: TfrmLiveBindingsBeyondTestMain
     Width = 612
     Height = 340
     Hint = ''
-    ActivePage = shtStrUtils
+    ActivePage = shtDateTime
     ActivePageDefault = shtDateTime
     Align = alClient
-    TabIndex = 1
+    TabIndex = 0
     TabOrder = 0
     FixedDimension = 22
     object shtDateTime: TRzTabSheet
@@ -46,35 +46,35 @@ object frmLiveBindingsBeyondTestMain: TfrmLiveBindingsBeyondTestMain
         Top = 84
         Width = 120
         Height = 16
-        Caption = 'Months since: -13.36'
+        Caption = 'Months since: -13.28'
       end
       object lblDaysSince: TLabel
         Left = 56
         Top = 106
         Width = 89
         Height = 16
-        Caption = 'Day since: -160'
+        Caption = 'Day since: -159'
       end
       object lblMinutesSince: TLabel
         Left = 56
         Top = 150
         Width = 151
         Height = 16
-        Caption = 'Minutes since: -230904.07'
+        Caption = 'Minutes since: -229538.88'
       end
       object lblSecondsSince: TLabel
         Left = 56
         Top = 172
         Width = 155
         Height = 16
-        Caption = 'Seconds  since: -13854200'
+        Caption = 'Seconds  since: -13772300'
       end
       object lblHoursSince: TLabel
         Left = 56
         Top = 128
         Width = 125
         Height = 16
-        Caption = 'Hours sincxe: -3848.4'
+        Caption = 'Hours sincxe: -3825.6'
       end
       object Label2: TLabel
         Left = 359
@@ -88,7 +88,7 @@ object frmLiveBindingsBeyondTestMain: TfrmLiveBindingsBeyondTestMain
         Top = 205
         Width = 214
         Height = 16
-        Caption = 'Current time: May 24, 2021 16:39:53'
+        Caption = 'Current time: May 25, 2021 15:19:07'
       end
       object BindNavigator1: TBindNavigator
         Left = 320
@@ -103,8 +103,6 @@ object frmLiveBindingsBeyondTestMain: TfrmLiveBindingsBeyondTestMain
     end
     object shtStrUtils: TRzTabSheet
       Caption = 'String'
-      ExplicitLeft = 0
-      ExplicitTop = 24
       DesignSize = (
         608
         314)
@@ -137,11 +135,10 @@ object frmLiveBindingsBeyondTestMain: TfrmLiveBindingsBeyondTestMain
         Width = 473
         Height = 24
         Anchors = [akLeft, akTop, akRight]
-        EditLabel.Width = 173
+        EditLabel.Width = 287
         EditLabel.Height = 16
-        EditLabel.Caption = 'Type something, then hit Tab:'
+        EditLabel.Caption = 'Type something with an ampersand, then hit Tab:'
         TabOrder = 0
-        Text = 'Label4'
       end
       object CheckBox1: TCheckBox
         Left = 48
@@ -156,10 +153,70 @@ object frmLiveBindingsBeyondTestMain: TfrmLiveBindingsBeyondTestMain
     end
     object shtJSON: TRzTabSheet
       Caption = 'JSON'
-      ExplicitLeft = 0
-      ExplicitTop = 0
-      ExplicitWidth = 0
-      ExplicitHeight = 0
+      DesignSize = (
+        608
+        314)
+      object Label7: TLabel
+        Left = 32
+        Top = 140
+        Width = 198
+        Height = 16
+        Caption = 'JSON Array (change then hit Tab):'
+      end
+      object Label8: TLabel
+        Left = 32
+        Top = 85
+        Width = 114
+        Height = 16
+        Anchors = [akLeft, akBottom]
+        Caption = 'JsonValue of Name:'
+      end
+      object Label9: TLabel
+        Left = 32
+        Top = 63
+        Width = 96
+        Height = 16
+        Anchors = [akLeft, akBottom]
+        Caption = 'JsonValue of Id: '
+      end
+      object Label10: TLabel
+        Left = 32
+        Top = 192
+        Width = 86
+        Height = 16
+        Caption = 'Names in CSV:'
+      end
+      object Label11: TLabel
+        Left = 32
+        Top = 214
+        Width = 513
+        Height = 27
+        Anchors = [akLeft, akTop, akRight, akBottom]
+        AutoSize = False
+        WordWrap = True
+      end
+      object edtJSONStr: TLabeledEdit
+        Left = 32
+        Top = 34
+        Width = 513
+        Height = 24
+        Anchors = [akLeft, akTop, akRight]
+        EditLabel.Width = 201
+        EditLabel.Height = 16
+        EditLabel.Caption = 'JSON String (change then hit Tab):'
+        TabOrder = 0
+        Text = '{"Id":1, "Name":"john"}'
+      end
+      object edtJsonArray: TEdit
+        Left = 32
+        Top = 162
+        Width = 513
+        Height = 24
+        TabOrder = 1
+        Text = 
+          '[{"Id":1,"Name":"John"},{"Id":2,"Name":"Sue"},{"Id":3,"Name":"He' +
+          'lga"}]'
+      end
     end
   end
   object PrototypeBindSrcDates: TPrototypeBindSource
@@ -173,8 +230,8 @@ object frmLiveBindingsBeyondTestMain: TfrmLiveBindingsBeyondTestMain
         ReadOnly = False
       end>
     ScopeMappings = <>
-    Left = 184
-    Top = 224
+    Left = 192
+    Top = 280
   end
   object BindingsList1: TBindingsList
     Methods = <>
@@ -277,6 +334,33 @@ object frmLiveBindingsBeyondTestMain: TfrmLiveBindingsBeyondTestMain
       Track = True
       Component = Label6
       ComponentProperty = 'ShowAccelChar'
+      InitializeControlValue = False
+    end
+    object LinkControlToPropertyCaption3: TLinkControlToProperty
+      Category = 'Quick Bindings'
+      Control = edtJSONStr
+      Track = True
+      Component = Label9
+      ComponentProperty = 'Caption'
+      CustomFormat = #39'JsonValue of Id: '#39' + JsonValue(%s, '#39'Id'#39')'
+      InitializeControlValue = False
+    end
+    object LinkControlToPropertyCaption4: TLinkControlToProperty
+      Category = 'Quick Bindings'
+      Control = edtJSONStr
+      Track = True
+      Component = Label8
+      ComponentProperty = 'Caption'
+      CustomFormat = #39'JsonValue of Name: '#39' + JsonValue(%s, '#39'Name'#39')'
+      InitializeControlValue = False
+    end
+    object LinkControlToPropertyCaption5: TLinkControlToProperty
+      Category = 'Quick Bindings'
+      Control = edtJsonArray
+      Track = True
+      Component = Label11
+      ComponentProperty = 'Caption'
+      CustomFormat = 'JsonArrayValToCSV(%s, '#39'Name'#39')'
       InitializeControlValue = False
     end
   end

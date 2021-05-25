@@ -46,6 +46,16 @@ type
     Label6: TLabel;
     LinkControlToPropertyCaption2: TLinkControlToProperty;
     LinkControlToPropertyShowAccelChar2: TLinkControlToProperty;
+    Label7: TLabel;
+    Label8: TLabel;
+    Label9: TLabel;
+    edtJSONStr: TLabeledEdit;
+    LinkControlToPropertyCaption3: TLinkControlToProperty;
+    LinkControlToPropertyCaption4: TLinkControlToProperty;
+    Label10: TLabel;
+    Label11: TLabel;
+    edtJsonArray: TEdit;
+    LinkControlToPropertyCaption5: TLinkControlToProperty;
   end;
 
 var
