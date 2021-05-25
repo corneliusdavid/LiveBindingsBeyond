@@ -13,10 +13,10 @@ uses
   System.Bindings.Consts, RTTI, JSON;
 
 /// <summary>
-///   ParseJsonValue(JsonString)
+///   JsonValue(JsonString)
 /// </summary>
 /// <remarks>
-///   Example: example: ParseJsonValue('{Id:1, Name:"John"}', 'Name') => 'John'
+///   Example: example: JsonValue('{Id:1, Name:"John"}', 'Name') => 'John'
 /// </remarks>
 /// <returns>
 ///   string
@@ -44,26 +44,33 @@ begin
         JsonStr := v1.GetValue.AsString;
         NameStr := v2.GetValue.AsString;
         try
-          var JsonObj := TJSONString.Create(JsonStr);
-
-          Result := TValueWrapper.Create(JsonObj.GetValue<string>(NameStr));
+          var JsonVal: TJSONValue := TJSONObject.ParseJSONValue(JsonStr);
+          try
+            var s: string;
+            if JSONVal.TryGetValue<string>(NameStr, s) then
+              Result := TValueWrapper.Create(s)
+            else
+              Result := TValueWrapper.Create(EmptyStr);
+          finally
+            JSONVal.Free;
+          end;
         except
           on e:Exception do
-            raise EEvaluatorError.Create('Invalid JSON format in JsonValue');
+            raise EEvaluatorError.Create('Invalid JSON format in JsonValue: ' + JsonStr);
         end;
       end);
 end;
 
 /// <summary>
-///   JsonArrayToCSV(JsonString, FieldName)
+///   JsonArrayValToCSV(JsonString, FieldName)
 /// </summary>
 /// <remarks>
-///   Example: example: JsonArrayToCSV('[{"Id":1,"Name":"John"}{"Id":2,"Name":"Sue"}]', 'Name') => 'John, Sue'
+///   Example: example: JsonArrayValToCSV('[{"Id":1,"Name":"John"},{"Id":2,"Name":"Sue"}]', 'Name') => 'John, Sue'
 /// </remarks>
 /// <returns>
 ///   string
 /// </returns>
-function MakeJsonArrayToCSVMethod: IInvokable;
+function MakeJsonArrayValToCSVMethod: IInvokable;
 begin
   Result := MakeInvokable(function(Args: TArray<IValue>): IValue
       var
@@ -119,7 +126,7 @@ end;
 const
   sUnitName = 'Beyond.Bind.Json';
   sJsonValueName = 'JsonValue';
-  sJsonArrayToCSVName = 'JsonArrayToCSV';
+  sJsonArrayValToCSVName = 'JsonArrayValToCSV';
 
 procedure RegisterMethods;
 begin
@@ -128,15 +135,15 @@ begin
          sJsonValueName, sJsonValueName, sUnitName, True,
          'Get a JSON Value from the given Name', nil));
   TBindingMethodsFactory.RegisterMethod(
-      TMethodDescription.Create(MakeJsonArrayToCSVMethod,
-         sJsonArrayToCSVName, sJsonArrayToCSVName, sUnitName, True,
+      TMethodDescription.Create(MakeJsonArrayValToCSVMethod,
+         sJsonArrayValToCSVName, sJsonArrayValToCSVName, sUnitName, True,
          'Convert a JSON array to CSV of the named field', nil));
 end;
 
 procedure UnregisterMethods;
 begin
   TBindingMethodsFactory.UnRegisterMethod(sJsonValueName);
-  TBindingMethodsFactory.UnRegisterMethod(sJsonArrayToCSVName);
+  TBindingMethodsFactory.UnRegisterMethod(sJsonArrayValToCSVName);
 end;
 
 initialization
