@@ -28,4 +28,4 @@ Reference: [Creating Custom LiveBindings Methods](http://docwiki.embarcadero.com
 
 David Cornelius
 
-[Contact](https://corneliusconcepts.com/contact_us) * [Blog](https://corneliusconcepts.tech)
+[Contact](https://corneliusconcepts.com/contact_us) * [Blog](https://corneliusconcepts.tech/beyond-standard-livebindings)
