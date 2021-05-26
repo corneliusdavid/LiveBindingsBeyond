@@ -19,10 +19,10 @@ object frmLiveBindingsBeyondTestMain: TfrmLiveBindingsBeyondTestMain
     Width = 612
     Height = 340
     Hint = ''
-    ActivePage = shtDateTime
+    ActivePage = shtStrUtils
     ActivePageDefault = shtDateTime
     Align = alClient
-    TabIndex = 0
+    TabIndex = 1
     TabOrder = 0
     FixedDimension = 22
     object shtDateTime: TRzTabSheet
@@ -46,7 +46,7 @@ object frmLiveBindingsBeyondTestMain: TfrmLiveBindingsBeyondTestMain
         Top = 84
         Width = 120
         Height = 16
-        Caption = 'Months since: -13.28'
+        Caption = 'Months since: -13.22'
       end
       object lblDaysSince: TLabel
         Left = 56
@@ -60,21 +60,21 @@ object frmLiveBindingsBeyondTestMain: TfrmLiveBindingsBeyondTestMain
         Top = 150
         Width = 151
         Height = 16
-        Caption = 'Minutes since: -229538.88'
+        Caption = 'Minutes since: -228455.94'
       end
       object lblSecondsSince: TLabel
         Left = 56
         Top = 172
         Width = 155
         Height = 16
-        Caption = 'Seconds  since: -13772300'
+        Caption = 'Seconds  since: -13707400'
       end
       object lblHoursSince: TLabel
         Left = 56
         Top = 128
         Width = 125
         Height = 16
-        Caption = 'Hours sincxe: -3825.6'
+        Caption = 'Hours sincxe: -3807.6'
       end
       object Label2: TLabel
         Left = 359
@@ -88,7 +88,7 @@ object frmLiveBindingsBeyondTestMain: TfrmLiveBindingsBeyondTestMain
         Top = 205
         Width = 214
         Height = 16
-        Caption = 'Current time: May 25, 2021 15:19:07'
+        Caption = 'Current time: May 26, 2021 09:22:03'
       end
       object BindNavigator1: TBindNavigator
         Left = 320
@@ -103,18 +103,22 @@ object frmLiveBindingsBeyondTestMain: TfrmLiveBindingsBeyondTestMain
     end
     object shtStrUtils: TRzTabSheet
       Caption = 'String'
+      ExplicitLeft = 2
+      ExplicitTop = 24
       DesignSize = (
         608
         314)
       object Label4: TLabel
         Left = 48
         Top = 86
-        Width = 4
+        Width = 473
         Height = 16
+        Anchors = [akLeft, akTop, akRight]
+        AutoSize = False
       end
       object Label5: TLabel
         Left = 48
-        Top = 128
+        Top = 152
         Width = 473
         Height = 16
         Anchors = [akLeft, akTop, akRight]
@@ -123,7 +127,15 @@ object frmLiveBindingsBeyondTestMain: TfrmLiveBindingsBeyondTestMain
       end
       object Label6: TLabel
         Left = 48
-        Top = 173
+        Top = 197
+        Width = 473
+        Height = 16
+        Anchors = [akLeft, akTop, akRight]
+        AutoSize = False
+      end
+      object Label12: TLabel
+        Left = 48
+        Top = 108
         Width = 473
         Height = 16
         Anchors = [akLeft, akTop, akRight]
@@ -135,14 +147,15 @@ object frmLiveBindingsBeyondTestMain: TfrmLiveBindingsBeyondTestMain
         Width = 473
         Height = 24
         Anchors = [akLeft, akTop, akRight]
-        EditLabel.Width = 287
+        EditLabel.Width = 175
         EditLabel.Height = 16
-        EditLabel.Caption = 'Type something with an ampersand, then hit Tab:'
+        EditLabel.Caption = 'Modify this string then hit Tab:'
         TabOrder = 0
+        Text = '&Ampersands are accelerators'
       end
       object CheckBox1: TCheckBox
         Left = 48
-        Top = 150
+        Top = 174
         Width = 193
         Height = 17
         Caption = 'Show "accelerator" character'
@@ -311,6 +324,7 @@ object frmLiveBindingsBeyondTestMain: TfrmLiveBindingsBeyondTestMain
       Component = Label4
       ComponentProperty = 'Caption'
       CustomFormat = #39'Length: '#39' + StrLen(%s)'
+      InitializeControlValue = False
     end
     object LinkControlToPropertyShowAccelChar: TLinkControlToProperty
       Category = 'Quick Bindings'
@@ -361,6 +375,15 @@ object frmLiveBindingsBeyondTestMain: TfrmLiveBindingsBeyondTestMain
       Component = Label11
       ComponentProperty = 'Caption'
       CustomFormat = 'JsonArrayValToCSV(%s, '#39'Name'#39')'
+      InitializeControlValue = False
+    end
+    object LinkControlToPropertyCaption6: TLinkControlToProperty
+      Category = 'Quick Bindings'
+      Control = edtLengthTest
+      Track = True
+      Component = Label12
+      ComponentProperty = 'Caption'
+      CustomFormat = 'IfThen(StrLen(%s) = 0, '#39'<blank string>'#39', '#39#39')'
       InitializeControlValue = False
     end
   end

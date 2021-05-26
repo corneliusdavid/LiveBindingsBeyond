@@ -56,6 +56,8 @@ type
     Label11: TLabel;
     edtJsonArray: TEdit;
     LinkControlToPropertyCaption5: TLinkControlToProperty;
+    Label12: TLabel;
+    LinkControlToPropertyCaption6: TLinkControlToProperty;
   end;
 
 var
