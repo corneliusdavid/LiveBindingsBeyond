@@ -58,6 +58,8 @@ type
     LinkControlToPropertyCaption5: TLinkControlToProperty;
     Label12: TLabel;
     LinkControlToPropertyCaption6: TLinkControlToProperty;
+    procedure LabeledEditChange(Sender: TObject);
+    procedure EditChange(Sender: TObject);
   end;
 
 var
@@ -66,5 +68,15 @@ var
 implementation
 
 {$R *.dfm}
+
+procedure TfrmLiveBindingsBeyondTestMain.LabeledEditChange(Sender: TObject);
+begin
+  TLinkObservers.ControlChanged(Sender as TLabeledEdit);
+end;
+
+procedure TfrmLiveBindingsBeyondTestMain.EditChange(Sender: TObject);
+begin
+  TLinkObservers.ControlChanged(Sender as TEdit);
+end;
 
 end.

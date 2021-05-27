@@ -46,35 +46,35 @@ object frmLiveBindingsBeyondTestMain: TfrmLiveBindingsBeyondTestMain
         Top = 84
         Width = 120
         Height = 16
-        Caption = 'Months since: -13.22'
+        Caption = 'Months since: -13.18'
       end
       object lblDaysSince: TLabel
         Left = 56
         Top = 106
         Width = 89
         Height = 16
-        Caption = 'Day since: -159'
+        Caption = 'Day since: -158'
       end
       object lblMinutesSince: TLabel
         Left = 56
         Top = 150
         Width = 151
         Height = 16
-        Caption = 'Minutes since: -228455.94'
+        Caption = 'Minutes since: -227675.88'
       end
       object lblSecondsSince: TLabel
         Left = 56
         Top = 172
         Width = 155
         Height = 16
-        Caption = 'Seconds  since: -13707400'
+        Caption = 'Seconds  since: -13660600'
       end
       object lblHoursSince: TLabel
         Left = 56
         Top = 128
         Width = 125
         Height = 16
-        Caption = 'Hours sincxe: -3807.6'
+        Caption = 'Hours sincxe: -3794.6'
       end
       object Label2: TLabel
         Left = 359
@@ -88,7 +88,7 @@ object frmLiveBindingsBeyondTestMain: TfrmLiveBindingsBeyondTestMain
         Top = 205
         Width = 214
         Height = 16
-        Caption = 'Current time: May 26, 2021 09:22:03'
+        Caption = 'Current time: May 26, 2021 22:22:07'
       end
       object BindNavigator1: TBindNavigator
         Left = 320
@@ -103,8 +103,6 @@ object frmLiveBindingsBeyondTestMain: TfrmLiveBindingsBeyondTestMain
     end
     object shtStrUtils: TRzTabSheet
       Caption = 'String'
-      ExplicitLeft = 2
-      ExplicitTop = 24
       DesignSize = (
         608
         314)
@@ -147,11 +145,12 @@ object frmLiveBindingsBeyondTestMain: TfrmLiveBindingsBeyondTestMain
         Width = 473
         Height = 24
         Anchors = [akLeft, akTop, akRight]
-        EditLabel.Width = 175
+        EditLabel.Width = 161
         EditLabel.Height = 16
-        EditLabel.Caption = 'Modify this string then hit Tab:'
+        EditLabel.Caption = 'Modify this string or clear it:'
         TabOrder = 0
         Text = '&Ampersands are accelerators'
+        OnChange = LabeledEditChange
       end
       object CheckBox1: TCheckBox
         Left = 48
@@ -172,9 +171,9 @@ object frmLiveBindingsBeyondTestMain: TfrmLiveBindingsBeyondTestMain
       object Label7: TLabel
         Left = 32
         Top = 140
-        Width = 198
+        Width = 179
         Height = 16
-        Caption = 'JSON Array (change then hit Tab):'
+        Caption = 'JSON Array with "Name" fields:'
       end
       object Label8: TLabel
         Left = 32
@@ -210,15 +209,16 @@ object frmLiveBindingsBeyondTestMain: TfrmLiveBindingsBeyondTestMain
       end
       object edtJSONStr: TLabeledEdit
         Left = 32
-        Top = 34
+        Top = 33
         Width = 513
         Height = 24
         Anchors = [akLeft, akTop, akRight]
-        EditLabel.Width = 201
+        EditLabel.Width = 257
         EditLabel.Height = 16
-        EditLabel.Caption = 'JSON String (change then hit Tab):'
+        EditLabel.Caption = 'JSON String (must have "Id" or "Name" field)'
         TabOrder = 0
         Text = '{"Id":1, "Name":"john"}'
+        OnChange = LabeledEditChange
       end
       object edtJsonArray: TEdit
         Left = 32
@@ -229,6 +229,7 @@ object frmLiveBindingsBeyondTestMain: TfrmLiveBindingsBeyondTestMain
         Text = 
           '[{"Id":1,"Name":"John"},{"Id":2,"Name":"Sue"},{"Id":3,"Name":"He' +
           'lga"}]'
+        OnChange = EditChange
       end
     end
   end
