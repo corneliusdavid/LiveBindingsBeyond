@@ -84,7 +84,7 @@ Coordinates=0,0,57,33
 Visible=False
 
 [edtLengthTest]
-Coordinates=620,20,85,87
+Coordinates=620,20,85,105
 ExplicitSubNodes=
 LayerNames=String
 
@@ -99,7 +99,7 @@ ExplicitSubNodes=ShowAccelChar
 LayerNames=String
 
 [CheckBox1]
-Coordinates=750,200,95,69
+Coordinates=760,210,95,69
 LayerNames=String
 
 [Label6]
@@ -139,6 +139,15 @@ LayerNames=JSON
 
 [Label12]
 Coordinates=760,30,52,51
+Visible=True
+LayerNames=String
+
+[Label13]
+Coordinates=352,306,52,33
+Visible=False
+
+[lblNetBIOSFriendly]
+Coordinates=660,300,108,51
 Visible=True
 LayerNames=String
 

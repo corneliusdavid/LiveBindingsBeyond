@@ -86,9 +86,9 @@ object frmLiveBindingsBeyondTestMain: TfrmLiveBindingsBeyondTestMain
       object Label3: TLabel
         Left = 40
         Top = 205
-        Width = 214
+        Width = 210
         Height = 16
-        Caption = 'Current time: May 26, 2021 22:22:07'
+        Caption = 'Current time: Jun 30, 2021 14:41:04'
       end
       object BindNavigator1: TBindNavigator
         Left = 320
@@ -103,12 +103,14 @@ object frmLiveBindingsBeyondTestMain: TfrmLiveBindingsBeyondTestMain
     end
     object shtStrUtils: TRzTabSheet
       Caption = 'String'
+      ExplicitLeft = 2
+      ExplicitTop = 24
       DesignSize = (
         608
         314)
       object Label4: TLabel
         Left = 48
-        Top = 86
+        Top = 62
         Width = 473
         Height = 16
         Anchors = [akLeft, akTop, akRight]
@@ -116,7 +118,7 @@ object frmLiveBindingsBeyondTestMain: TfrmLiveBindingsBeyondTestMain
       end
       object Label5: TLabel
         Left = 48
-        Top = 152
+        Top = 128
         Width = 473
         Height = 16
         Anchors = [akLeft, akTop, akRight]
@@ -125,7 +127,7 @@ object frmLiveBindingsBeyondTestMain: TfrmLiveBindingsBeyondTestMain
       end
       object Label6: TLabel
         Left = 48
-        Top = 197
+        Top = 173
         Width = 473
         Height = 16
         Anchors = [akLeft, akTop, akRight]
@@ -133,7 +135,24 @@ object frmLiveBindingsBeyondTestMain: TfrmLiveBindingsBeyondTestMain
       end
       object Label12: TLabel
         Left = 48
-        Top = 108
+        Top = 84
+        Width = 473
+        Height = 16
+        Anchors = [akLeft, akTop, akRight]
+        AutoSize = False
+      end
+      object Label13: TLabel
+        Left = 48
+        Top = 211
+        Width = 473
+        Height = 16
+        Anchors = [akLeft, akTop, akRight]
+        AutoSize = False
+        Caption = 'NetBIOS-friendly name:'
+      end
+      object lblNetBIOSFriendly: TLabel
+        Left = 48
+        Top = 233
         Width = 473
         Height = 16
         Anchors = [akLeft, akTop, akRight]
@@ -141,7 +160,7 @@ object frmLiveBindingsBeyondTestMain: TfrmLiveBindingsBeyondTestMain
       end
       object edtLengthTest: TLabeledEdit
         Left = 48
-        Top = 56
+        Top = 32
         Width = 473
         Height = 24
         Anchors = [akLeft, akTop, akRight]
@@ -154,7 +173,7 @@ object frmLiveBindingsBeyondTestMain: TfrmLiveBindingsBeyondTestMain
       end
       object CheckBox1: TCheckBox
         Left = 48
-        Top = 174
+        Top = 150
         Width = 193
         Height = 17
         Caption = 'Show "accelerator" character'
@@ -385,6 +404,15 @@ object frmLiveBindingsBeyondTestMain: TfrmLiveBindingsBeyondTestMain
       Component = Label12
       ComponentProperty = 'Caption'
       CustomFormat = 'IfThen(StrLen(%s) = 0, '#39'<blank string>'#39', '#39#39')'
+      InitializeControlValue = False
+    end
+    object LinkControlToPropertyCaption7: TLinkControlToProperty
+      Category = 'Quick Bindings'
+      Control = edtLengthTest
+      Track = True
+      Component = lblNetBIOSFriendly
+      ComponentProperty = 'Caption'
+      CustomFormat = 'NetBIOSName(%s)'
       InitializeControlValue = False
     end
   end

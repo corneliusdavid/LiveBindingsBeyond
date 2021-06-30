@@ -58,6 +58,9 @@ type
     LinkControlToPropertyCaption5: TLinkControlToProperty;
     Label12: TLabel;
     LinkControlToPropertyCaption6: TLinkControlToProperty;
+    Label13: TLabel;
+    lblNetBIOSFriendly: TLabel;
+    LinkControlToPropertyCaption7: TLinkControlToProperty;
     procedure LabeledEditChange(Sender: TObject);
     procedure EditChange(Sender: TObject);
   end;
