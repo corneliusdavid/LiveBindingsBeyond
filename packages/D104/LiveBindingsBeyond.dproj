@@ -121,11 +121,12 @@
         <DCC_Namespace>Winapi;System.Win;Data.Win;Datasnap.Win;Web.Win;Soap.Win;Xml.Win;Bde;$(DCC_Namespace)</DCC_Namespace>
         <BT_BuildType>Debug</BT_BuildType>
         <VerInfo_IncludeVerInfo>true</VerInfo_IncludeVerInfo>
-        <DCC_UsePackage>rtl;bindengine;$(DCC_UsePackage)</DCC_UsePackage>
+        <DCC_UsePackage>rtl;bindengine;vcl;$(DCC_UsePackage)</DCC_UsePackage>
         <DCC_DcuOutput>$(BDSCOMMONDIR)\Dcp</DCC_DcuOutput>
+        <DCC_UnitSearchPath>$(BDS)\source\ToolsAPI;$(DCC_UnitSearchPath)</DCC_UnitSearchPath>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Base_Win64)'!=''">
-        <DCC_UsePackage>rtl;bindengine;$(DCC_UsePackage)</DCC_UsePackage>
+        <DCC_UsePackage>rtl;bindengine;vcl;$(DCC_UsePackage)</DCC_UsePackage>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Cfg_1)'!=''">
         <DCC_Define>DEBUG;$(DCC_Define)</DCC_Define>
@@ -147,6 +148,7 @@
     </PropertyGroup>
     <PropertyGroup Condition="'$(Cfg_2_Win32)'!=''">
         <VerInfo_IncludeVerInfo>true</VerInfo_IncludeVerInfo>
+        <DllSuffix>104</DllSuffix>
     </PropertyGroup>
     <ItemGroup>
         <DelphiCompile Include="$(MainSource)">
@@ -154,9 +156,11 @@
         </DelphiCompile>
         <DCCReference Include="rtl.dcp"/>
         <DCCReference Include="bindengine.dcp"/>
-        <DCCReference Include="Beyond.Bind.Json.pas"/>
-        <DCCReference Include="Beyond.Bind.StrUtils.pas"/>
-        <DCCReference Include="Beyond.Bind.DateUtils.pas"/>
+        <DCCReference Include="vcl.dcp"/>
+        <DCCReference Include="designide.dcp"/>
+        <DCCReference Include="..\..\Beyond.Bind.Json.pas"/>
+        <DCCReference Include="..\..\Beyond.Bind.StrUtils.pas"/>
+        <DCCReference Include="..\..\Beyond.Bind.DateUtils.pas"/>
         <BuildConfiguration Include="Release">
             <Key>Cfg_2</Key>
             <CfgParent>Base</CfgParent>
@@ -202,6 +206,12 @@
                     </Platform>
                 </DeployFile>
                 <DeployFile LocalName="C:\Users\Public\Documents\Embarcadero\Studio\21.0\Bpl\LiveBindingsBeyond.bpl" Configuration="Debug" Class="ProjectOutput">
+                    <Platform Name="Win32">
+                        <RemoteName>LiveBindingsBeyond.bpl</RemoteName>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="C:\Users\Public\Documents\Embarcadero\Studio\21.0\Bpl\LiveBindingsBeyond.bpl" Configuration="Release" Class="ProjectOutput">
                     <Platform Name="Win32">
                         <RemoteName>LiveBindingsBeyond.bpl</RemoteName>
                         <Overwrite>true</Overwrite>

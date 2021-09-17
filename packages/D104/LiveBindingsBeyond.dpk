@@ -26,15 +26,18 @@ package LiveBindingsBeyond;
 {$DEFINE RELEASE}
 {$ENDIF IMPLICITBUILDING}
 {$DESCRIPTION 'LiveBindings and Beyond'}
+{$LIBSUFFIX '104'}
 {$IMPLICITBUILD OFF}
 
 requires
   rtl,
-  bindengine;
+  bindengine,
+  vcl,
+  designide;
 
 contains
-  Beyond.Bind.Json in 'Beyond.Bind.Json.pas',
-  Beyond.Bind.StrUtils in 'Beyond.Bind.StrUtils.pas',
-  Beyond.Bind.DateUtils in 'Beyond.Bind.DateUtils.pas';
+  Beyond.Bind.Json in '..\..\Beyond.Bind.Json.pas',
+  Beyond.Bind.StrUtils in '..\..\Beyond.Bind.StrUtils.pas',
+  Beyond.Bind.DateUtils in '..\..\Beyond.Bind.DateUtils.pas';
 
 end.
