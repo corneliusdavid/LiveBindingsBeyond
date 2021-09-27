@@ -8,9 +8,9 @@ interface
 implementation
 
 uses
-  System.SysUtils, System.Math,
   System.Bindings.Methods, System.Bindings.EvalProtocol,
   System.Bindings.Consts, System.TypInfo,
+  System.Rtti, System.SysUtils, System.Math,
   System.TimeSpan;
 
 /// <summary>
@@ -225,6 +225,11 @@ procedure UnregisterMethods;
 begin
   TBindingMethodsFactory.UnRegisterMethod(sNowName);
   TBindingMethodsFactory.UnRegisterMethod(sYearsSinceName);
+  TBindingMethodsFactory.UnRegisterMethod(sMonthsSinceName);
+  TBindingMethodsFactory.UnRegisterMethod(sDaysSinceName);
+  TBindingMethodsFactory.UnRegisterMethod(sHoursSinceName);
+  TBindingMethodsFactory.UnRegisterMethod(sMinutesSinceName);
+  TBindingMethodsFactory.UnRegisterMethod(sSecondsSinceName);
 end;
 
 initialization

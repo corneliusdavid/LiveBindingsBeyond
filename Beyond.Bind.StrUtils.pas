@@ -8,9 +8,10 @@ interface
 implementation
 
 uses
-  System.SysUtils, System.TypInfo, System.StrUtils,
   System.Bindings.Methods, System.Bindings.EvalProtocol,
-  System.Bindings.Consts, System.Rtti;
+  System.Bindings.Consts, System.TypInfo,
+  System.Rtti,
+  System.SysUtils, System.StrUtils;
 
 /// <summary>
 ///   StrLen(String)
