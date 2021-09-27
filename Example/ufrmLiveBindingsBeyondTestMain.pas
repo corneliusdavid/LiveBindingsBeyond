@@ -13,8 +13,6 @@ uses
 
 type
   TfrmLiveBindingsBeyondTestMain = class(TForm)
-    pgLBCategories: TRzPageControl;
-    shtDateTime: TRzTabSheet;
     Label1: TLabel;
     lblYearsSince: TLabel;
     lblMonthsSince: TLabel;
@@ -33,10 +31,8 @@ type
     LinkPropertyToFieldCaption7: TLinkPropertyToField;
     BindNavigator1: TBindNavigator;
     Label2: TLabel;
-    shtStrUtils: TRzTabSheet;
     Label3: TLabel;
     LinkPropertyToFieldCaption8: TLinkPropertyToField;
-    shtJSON: TRzTabSheet;
     edtLengthTest: TLabeledEdit;
     Label4: TLabel;
     LinkControlToPropertyCaption: TLinkControlToProperty;
@@ -61,6 +57,10 @@ type
     Label13: TLabel;
     lblNetBIOSFriendly: TLabel;
     LinkControlToPropertyCaption7: TLinkControlToProperty;
+    pgcLiveBindTests: TPageControl;
+    shtLiveBindDateTime: TTabSheet;
+    shtLiveBindString: TTabSheet;
+    shtLiveBindJSON: TTabSheet;
     procedure LabeledEditChange(Sender: TObject);
     procedure EditChange(Sender: TObject);
   end;
