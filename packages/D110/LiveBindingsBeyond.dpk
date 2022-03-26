@@ -26,14 +26,12 @@ package LiveBindingsBeyond;
 {$DEFINE RELEASE}
 {$ENDIF IMPLICITBUILDING}
 {$DESCRIPTION 'LiveBindings and Beyond'}
-{$LIBSUFFIX 'D110'}
+{$LIBSUFFIX '280'}
 {$IMPLICITBUILD OFF}
 
 requires
   rtl,
-  vcl,
-  bindengine,
-  designide;
+  bindengine;
 
 contains
   Beyond.Bind.Json in '..\..\Beyond.Bind.Json.pas',
