@@ -2,22 +2,21 @@ object frmLiveBindingsBeyondTestMain: TfrmLiveBindingsBeyondTestMain
   Left = 0
   Top = 0
   Caption = 'LiveBindings and Beyond Exmplaes'
-  ClientHeight = 448
-  ClientWidth = 552
+  ClientHeight = 564
+  ClientWidth = 717
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
   Font.Height = -13
   Font.Name = 'Tahoma'
   Font.Style = []
-  PixelsPerInch = 96
   TextHeight = 16
   object pgcLiveBindTests: TPageControl
     Left = 0
     Top = 0
-    Width = 552
-    Height = 448
-    ActivePage = shtLiveBindDateTime
+    Width = 717
+    Height = 564
+    ActivePage = shtLiveBindJSON
     Align = alClient
     Style = tsFlatButtons
     TabOrder = 0
@@ -28,7 +27,7 @@ object frmLiveBindingsBeyondTestMain: TfrmLiveBindingsBeyondTestMain
         Top = 29
         Width = 220
         Height = 16
-        Caption = 'Random Time: Nov 01, 2021 00:58:00'
+        Caption = 'Random Time: Nov 01, 2022 00:58:00'
       end
       object Label2: TLabel
         Left = 359
@@ -42,49 +41,49 @@ object frmLiveBindingsBeyondTestMain: TfrmLiveBindingsBeyondTestMain
         Top = 205
         Width = 213
         Height = 16
-        Caption = 'Current time: Sep 26, 2021 21:49:09'
+        Caption = 'Current time: Mar 26, 2022 09:10:54'
       end
       object lblDaysSince: TLabel
         Left = 56
         Top = 106
-        Width = 82
+        Width = 89
         Height = 16
-        Caption = 'Day since: -35'
+        Caption = 'Day since: -220'
       end
       object lblHoursSince: TLabel
         Left = 56
         Top = 128
-        Width = 118
+        Width = 125
         Height = 16
-        Caption = 'Hours sincxe: -843.1'
+        Caption = 'Hours sincxe: -5271.8'
       end
       object lblMinutesSince: TLabel
         Left = 56
         Top = 150
-        Width = 144
+        Width = 151
         Height = 16
-        Caption = 'Minutes since: -50588.84'
+        Caption = 'Minutes since: -316307.09'
       end
       object lblMonthsSince: TLabel
         Left = 56
         Top = 84
         Width = 113
         Height = 16
-        Caption = 'Months since: -2.93'
+        Caption = 'Months since: -18.3'
       end
       object lblSecondsSince: TLabel
         Left = 56
         Top = 172
-        Width = 148
+        Width = 155
         Height = 16
-        Caption = 'Seconds  since: -3035300'
+        Caption = 'Seconds  since: -18978400'
       end
       object lblYearsSince: TLabel
         Left = 56
         Top = 62
         Width = 97
         Height = 16
-        Caption = 'Years since: -0.1'
+        Caption = 'Years since: -0.6'
       end
       object BindNavigator1: TBindNavigator
         Left = 320
@@ -101,12 +100,12 @@ object frmLiveBindingsBeyondTestMain: TfrmLiveBindingsBeyondTestMain
       Caption = 'String'
       ImageIndex = 1
       DesignSize = (
-        544
-        414)
+        709
+        530)
       object Label12: TLabel
         Left = 48
         Top = 84
-        Width = 409
+        Width = 574
         Height = 16
         Anchors = [akLeft, akTop, akRight]
         AutoSize = False
@@ -115,7 +114,7 @@ object frmLiveBindingsBeyondTestMain: TfrmLiveBindingsBeyondTestMain
       object Label13: TLabel
         Left = 48
         Top = 211
-        Width = 409
+        Width = 574
         Height = 16
         Anchors = [akLeft, akTop, akRight]
         AutoSize = False
@@ -125,7 +124,7 @@ object frmLiveBindingsBeyondTestMain: TfrmLiveBindingsBeyondTestMain
       object Label4: TLabel
         Left = 48
         Top = 62
-        Width = 409
+        Width = 574
         Height = 16
         Anchors = [akLeft, akTop, akRight]
         AutoSize = False
@@ -134,7 +133,7 @@ object frmLiveBindingsBeyondTestMain: TfrmLiveBindingsBeyondTestMain
       object Label5: TLabel
         Left = 48
         Top = 128
-        Width = 409
+        Width = 574
         Height = 16
         Anchors = [akLeft, akTop, akRight]
         AutoSize = False
@@ -144,7 +143,7 @@ object frmLiveBindingsBeyondTestMain: TfrmLiveBindingsBeyondTestMain
       object Label6: TLabel
         Left = 48
         Top = 173
-        Width = 409
+        Width = 574
         Height = 16
         Anchors = [akLeft, akTop, akRight]
         AutoSize = False
@@ -153,7 +152,7 @@ object frmLiveBindingsBeyondTestMain: TfrmLiveBindingsBeyondTestMain
       object lblNetBIOSFriendly: TLabel
         Left = 48
         Top = 233
-        Width = 409
+        Width = 574
         Height = 16
         Anchors = [akLeft, akTop, akRight]
         AutoSize = False
@@ -172,7 +171,7 @@ object frmLiveBindingsBeyondTestMain: TfrmLiveBindingsBeyondTestMain
       object edtLengthTest: TLabeledEdit
         Left = 48
         Top = 32
-        Width = 338
+        Width = 503
         Height = 24
         Anchors = [akLeft, akTop, akRight]
         EditLabel.Width = 161
@@ -186,76 +185,116 @@ object frmLiveBindingsBeyondTestMain: TfrmLiveBindingsBeyondTestMain
     object shtLiveBindJSON: TTabSheet
       Caption = 'JSON'
       ImageIndex = 2
-      DesignSize = (
-        544
-        414)
-      object Label10: TLabel
-        Left = 32
-        Top = 207
-        Width = 86
-        Height = 16
-        Caption = 'Names in CSV:'
-      end
-      object Label11: TLabel
-        Left = 32
-        Top = 214
-        Width = 449
-        Height = 127
-        Anchors = [akLeft, akTop, akRight, akBottom]
-        AutoSize = False
-        WordWrap = True
-        ExplicitWidth = 513
-        ExplicitHeight = 27
-      end
-      object Label7: TLabel
-        Left = 32
-        Top = 140
-        Width = 179
-        Height = 16
-        Caption = 'JSON Array with "Name" fields:'
-      end
-      object Label8: TLabel
-        Left = 32
-        Top = 185
-        Width = 114
-        Height = 16
-        Anchors = [akLeft, akBottom]
-        Caption = 'JsonValue of Name:'
-        ExplicitTop = 85
-      end
-      object Label9: TLabel
-        Left = 32
-        Top = 163
-        Width = 96
-        Height = 16
-        Anchors = [akLeft, akBottom]
-        Caption = 'JsonValue of Id: '
-        ExplicitTop = 63
-      end
-      object edtJsonArray: TEdit
-        Left = 32
-        Top = 162
-        Width = 449
-        Height = 24
-        Anchors = [akLeft, akTop, akRight]
+      object FlowPanel1: TFlowPanel
+        Left = 0
+        Top = 0
+        Width = 709
+        Height = 530
+        Align = alClient
+        FlowStyle = fsTopBottomLeftRight
+        Padding.Left = 40
+        Padding.Top = 15
         TabOrder = 0
-        Text = 
-          '[{"Id":1,"Name":"John"},{"Id":2,"Name":"Sue"},{"Id":3,"Name":"He' +
-          'lga"}]'
-        OnChange = EditChange
-      end
-      object edtJSONStr: TLabeledEdit
-        Left = 32
-        Top = 33
-        Width = 449
-        Height = 24
-        Anchors = [akLeft, akTop, akRight]
-        EditLabel.Width = 257
-        EditLabel.Height = 16
-        EditLabel.Caption = 'JSON String (must have "Id" or "Name" field)'
-        TabOrder = 1
-        Text = '{"Id":1, "Name":"john"}'
-        OnChange = LabeledEditChange
+        DesignSize = (
+          709
+          530)
+        object edtJSONStr: TLabeledEdit
+          Left = 41
+          Top = 35
+          Width = 614
+          Height = 24
+          Anchors = [akLeft, akTop, akRight]
+          EditLabel.Width = 257
+          EditLabel.Height = 16
+          EditLabel.Caption = 'JSON String (must have "Id" or "Name" field)'
+          TabOrder = 0
+          Text = '{"Id":1, "Name":"john"}'
+          OnChange = LabeledEditChange
+        end
+        object Label9: TLabel
+          Left = 41
+          Top = 59
+          Width = 124
+          Height = 24
+          Margins.Top = 5
+          Margins.Bottom = 5
+          AutoSize = False
+          Caption = 'JsonValue of Id: '
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clWindowText
+          Font.Height = -13
+          Font.Name = 'Tahoma'
+          Font.Style = []
+          ParentFont = False
+        end
+        object Label8: TLabel
+          Left = 41
+          Top = 83
+          Width = 147
+          Height = 49
+          Anchors = [akLeft, akBottom]
+          AutoSize = False
+          Caption = 'JsonValue of Name:'
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clWindowText
+          Font.Height = -13
+          Font.Name = 'Tahoma'
+          Font.Style = []
+          ParentFont = False
+        end
+        object Label7: TLabel
+          Left = 41
+          Top = 132
+          Width = 179
+          Height = 16
+          Caption = 'JSON Array with "Name" fields:'
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clWindowText
+          Font.Height = -13
+          Font.Name = 'Tahoma'
+          Font.Style = []
+          ParentFont = False
+        end
+        object edtJsonArray: TEdit
+          Left = 41
+          Top = 148
+          Width = 614
+          Height = 24
+          Anchors = [akLeft, akTop, akRight]
+          TabOrder = 1
+          Text = 
+            '[{"Id":1,"Name":"John"},{"Id":2,"Name":"Sue"},{"Id":3,"Name":"He' +
+            'lga"}]'
+          OnChange = EditChange
+        end
+        object Label10: TLabel
+          Left = 41
+          Top = 172
+          Width = 86
+          Height = 16
+          Caption = 'Names in CSV:'
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clWindowText
+          Font.Height = -13
+          Font.Name = 'Tahoma'
+          Font.Style = []
+          ParentFont = False
+        end
+        object Label11: TLabel
+          Left = 41
+          Top = 188
+          Width = 614
+          Height = 164
+          Anchors = [akLeft, akTop, akRight, akBottom]
+          AutoSize = False
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clWindowText
+          Font.Height = -13
+          Font.Name = 'Tahoma'
+          Font.Style = []
+          ParentFont = False
+          WordWrap = True
+        end
       end
     end
   end
@@ -276,8 +315,8 @@ object frmLiveBindingsBeyondTestMain: TfrmLiveBindingsBeyondTestMain
   object BindingsList1: TBindingsList
     Methods = <>
     OutputConverters = <>
-    Left = 228
-    Top = 357
+    Left = 213
+    Top = 438
     object LinkPropertyToFieldCaption2: TLinkPropertyToField
       Category = 'Quick Bindings'
       DataSource = PrototypeBindSrcDates

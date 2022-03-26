@@ -1,10 +1,10 @@
 ﻿[Label1]
-Coordinates=80,200,53,58
+Coordinates=20,200,46,51
 Visible=True
 LayerNames=DateTime
 
 [lblDaysSince]
-Coordinates=80,140,89,58
+Coordinates=20,140,78,51
 LayerNames=DateTime
 
 [edtEnteredTime]
@@ -13,17 +13,17 @@ ExplicitSubNodes=Date;Time
 Visible=False
 
 [lblMonthsSince]
-Coordinates=80,80,102,58
+Coordinates=20,80,90,51
 Visible=True
 LayerNames=DateTime
 
 [lblMinutesSince]
-Coordinates=480,250,105,58
+Coordinates=400,250,92,51
 LayerNames=DateTime
 Visible=True
 
 [lblYearsSince]
-Coordinates=80,20,93,58
+Coordinates=20,20,81,51
 Visible=True
 LayerNames=DateTime
 
@@ -33,7 +33,7 @@ ExplicitSubNodes=AsDateTime;Time
 Visible=False
 
 [lblSecondsSince]
-Coordinates=480,110,110,58
+Coordinates=420,110,96,51
 LayerNames=DateTime
 
 []
@@ -43,115 +43,118 @@ LayerNames=JSON
 ExplicitSubNodes=Text
 
 [BindingsList1]
-Coordinates=0,0,91,36
+Coordinates=0,0,82,33
 
 [lblHoursSince]
-Coordinates=480,180,94,58
+Coordinates=420,180,83,51
 LayerNames=DateTime
 Visible=True
 
 [Label2]
-Coordinates=0,0,53,36
+Coordinates=0,0,46,33
 Visible=False
 
 [PrototypeBindSrcDates]
-Coordinates=280,50,148,202
+Coordinates=220,50,129,195
 LayerNames=DateTime
 
 [Label3]
-Coordinates=180,240,53,58
+Coordinates=120,240,46,51
 LayerNames=DateTime
 
 [Module Settings]
 ModelLayerNames=DateTime;String;JSON
-ActiveLayerNames=
+ActiveLayerNames=JSON
 EditingLayerName=JSON
 
 [edtLengthTest]
-Coordinates=620,20,97,108
+Coordinates=620,20,85,105
 ExplicitSubNodes=
 LayerNames=String
 
 [Label4]
-Coordinates=650,140,53,58
+Coordinates=540,20,46,51
 LayerNames=String
 
 [Label5]
-Coordinates=780,120,94,80
+Coordinates=800,120,79,69
 Visible=True
 ExplicitSubNodes=ShowAccelChar
 LayerNames=String
 
 [CheckBox1]
-Coordinates=760,210,114,72
+Coordinates=790,220,95,69
 LayerNames=String
 
 [Label6]
-Coordinates=630,210,94,80
+Coordinates=620,160,79,69
 ExplicitSubNodes=ShowAccelChar
 LayerNames=String
 
 [Label9]
-Coordinates=900,100,53,58
+Coordinates=1070,30,46,51
 Visible=True
 LayerNames=JSON
 
 [Label7]
-Coordinates=16,70,53,36
+Coordinates=16,70,46,33
 Visible=False
 
 [Label8]
-Coordinates=910,160,53,58
+Coordinates=1070,100,46,51
 LayerNames=JSON
 
 [edtJSONStr]
-Coordinates=880,20,83,72
+Coordinates=920,30,72,69
 LayerNames=JSON
 
 [Label10]
-Coordinates=26,70,60,36
+Coordinates=26,70,52,33
 Visible=False
 
 [Label11]
-Coordinates=1020,240,60,58
+Coordinates=1070,180,52,51
 LayerNames=JSON
+Visible=True
 
 [edtJsonArray]
-Coordinates=920,240,90,58
+Coordinates=930,130,80,51
 Visible=True
 LayerNames=JSON
 
 [Label12]
-Coordinates=760,30,60,58
+Coordinates=790,30,52,51
 Visible=True
 LayerNames=String
 
 [Label13]
-Coordinates=352,306,60,36
+Coordinates=352,306,52,33
 Visible=False
 
 [lblNetBIOSFriendly]
-Coordinates=640,300,124,58
+Coordinates=600,250,108,51
 Visible=True
 LayerNames=String
 
-[BindNavigator1]
-LayerNames=DateTime
-Coordinates=470,50,103,58
-
 [pgcLiveBindTests]
-Coordinates=350,370,93,36
+Coordinates=350,370,103,33
 Visible=False
 
 [shtLiveBindDateTime]
-Coordinates=60,370,77,36
+Coordinates=60,370,119,33
 Visible=False
 
 [shtLiveBindString]
-Coordinates=230,370,77,36
+Coordinates=230,370,103,33
 Visible=False
 
 [shtLiveBindJSON]
-Coordinates=160,360,77,36
+Coordinates=160,360,101,33
 Visible=False
+
+[BindNavigator1]
+Coordinates=120,1,90,51
+
+[FlowPanel1]
+Coordinates=120,71,71,51
 

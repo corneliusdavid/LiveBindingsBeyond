@@ -4,8 +4,8 @@ interface
 
 uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
-  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, Vcl.Mask, RzEdit, RzDBEdit,
-  RzTabs, Vcl.ComCtrls, RzDTP, Data.Bind.GenData, Data.Bind.EngExt,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, Vcl.Mask,
+  Vcl.ComCtrls, Data.Bind.GenData, Data.Bind.EngExt,
   Beyond.Bind.DateUtils, Vcl.Bind.DBEngExt, System.Rtti,
   System.Bindings.Outputs, Vcl.Bind.Editors, Data.Bind.Components,
   Data.Bind.ObjectScope, Beyond.Bind.Json, Beyond.Bind.StrUtils,
@@ -61,6 +61,7 @@ type
     shtLiveBindDateTime: TTabSheet;
     shtLiveBindString: TTabSheet;
     shtLiveBindJSON: TTabSheet;
+    FlowPanel1: TFlowPanel;
     procedure LabeledEditChange(Sender: TObject);
     procedure EditChange(Sender: TObject);
   end;
