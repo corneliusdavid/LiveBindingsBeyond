@@ -26,6 +26,7 @@ package LiveBindingsBeyond;
 {$DEFINE RELEASE}
 {$ENDIF IMPLICITBUILDING}
 {$DESCRIPTION 'LiveBindings and Beyond'}
+{$LIBSUFFIX AUTO}
 {$IMPLICITBUILD OFF}
 
 requires
@@ -33,8 +34,8 @@ requires
   bindengine;
 
 contains
-  Beyond.Bind.Json in 'Beyond.Bind.Json.pas',
-  Beyond.Bind.StrUtils in 'Beyond.Bind.StrUtils.pas',
-  Beyond.Bind.DateUtils in 'Beyond.Bind.DateUtils.pas';
+  Beyond.Bind.Json in '..\source\Beyond.Bind.Json.pas',
+  Beyond.Bind.StrUtils in '..\source\Beyond.Bind.StrUtils.pas',
+  Beyond.Bind.DateUtils in '..\source\Beyond.Bind.DateUtils.pas';
 
 end.
