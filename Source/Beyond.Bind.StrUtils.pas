@@ -8,9 +8,10 @@ interface
 implementation
 
 uses
-  System.SysUtils, System.TypInfo, System.StrUtils,
   System.Bindings.Methods, System.Bindings.EvalProtocol,
-  System.Bindings.Consts, System.Rtti;
+  System.Bindings.Consts, System.TypInfo,
+  System.Rtti,
+  System.SysUtils, System.StrUtils;
 
 /// <summary>
 ///   StrLen(String)
@@ -85,8 +86,8 @@ end;
 ///   NetBIOSName(String)
 /// </summary>
 /// <remarks>
-///   <para>Removes characters invalid for NetBIOS names to allow entry of a regular name
-///   and use this to automaticlaly convert it to a NetBIOS-friendly version.</para>
+///   <para>Removes characters invalid for NetBIOS names to allow entry of a regular name;
+///   use this to automaticlaly convert a string to a NetBIOS-friendly version.</para>
 ///   <para>Reference: https://docs.microsoft.com/en-us/troubleshoot/windows-server/identity/naming-conventions-for-computer-domain-site-ou</para>
 /// </remarks>
 /// <returns>

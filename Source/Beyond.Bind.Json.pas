@@ -8,9 +8,11 @@ interface
 implementation
 
 uses
-  System.SysUtils, System.TypInfo,
   System.Bindings.Methods, System.Bindings.EvalProtocol,
-  System.Bindings.Consts, RTTI, JSON;
+  System.Bindings.Consts, System.TypInfo,
+  System.Rtti,
+  System.SysUtils, System.StrUtils,
+  JSON;
 
 /// <summary>
 ///   JsonValue(JsonString)

@@ -4,8 +4,8 @@ interface
 
 uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
-  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, Vcl.Mask, RzEdit, RzDBEdit,
-  RzTabs, Vcl.ComCtrls, RzDTP, Data.Bind.GenData, Data.Bind.EngExt,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, Vcl.Mask,
+  Vcl.ComCtrls, Data.Bind.GenData, Data.Bind.EngExt,
   Beyond.Bind.DateUtils, Vcl.Bind.DBEngExt, System.Rtti,
   System.Bindings.Outputs, Vcl.Bind.Editors, Data.Bind.Components,
   Data.Bind.ObjectScope, Beyond.Bind.Json, Beyond.Bind.StrUtils,
@@ -13,8 +13,6 @@ uses
 
 type
   TfrmLiveBindingsBeyondTestMain = class(TForm)
-    pgLBCategories: TRzPageControl;
-    shtDateTime: TRzTabSheet;
     Label1: TLabel;
     lblYearsSince: TLabel;
     lblMonthsSince: TLabel;
@@ -33,10 +31,8 @@ type
     LinkPropertyToFieldCaption7: TLinkPropertyToField;
     BindNavigator1: TBindNavigator;
     Label2: TLabel;
-    shtStrUtils: TRzTabSheet;
     Label3: TLabel;
     LinkPropertyToFieldCaption8: TLinkPropertyToField;
-    shtJSON: TRzTabSheet;
     edtLengthTest: TLabeledEdit;
     Label4: TLabel;
     LinkControlToPropertyCaption: TLinkControlToProperty;
@@ -61,6 +57,11 @@ type
     Label13: TLabel;
     lblNetBIOSFriendly: TLabel;
     LinkControlToPropertyCaption7: TLinkControlToProperty;
+    pgcLiveBindTests: TPageControl;
+    shtLiveBindDateTime: TTabSheet;
+    shtLiveBindString: TTabSheet;
+    shtLiveBindJSON: TTabSheet;
+    FlowPanel1: TFlowPanel;
     procedure LabeledEditChange(Sender: TObject);
     procedure EditChange(Sender: TObject);
   end;
